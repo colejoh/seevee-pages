@@ -1,0 +1,25 @@
+{
+  "name": "seevee-pages",
+  "version": "1.0.0",
+  "description": "Serves user landing pages",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seeveeapp/seevee-pages.git"
+  },
+  "author": "Cole Johnson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seeveeapp/seevee-pages/issues"
+  },
+  "homepage": "https://github.com/seeveeapp/seevee-pages#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "pug": "^2.0.0-beta6",
+    "request": "^2.79.0"
+  }
+}
