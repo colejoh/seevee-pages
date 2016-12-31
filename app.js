@@ -18,8 +18,7 @@ app.get('/:pageName', function(req, res) {
     request(url, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             var data = JSON.parse(body);
-            console.log(data);
-            var pugCode = fs.readFileSync(__dirname + '/views/test.pug', "utf8");
+            var pugCode = fs.readFileSync(__dirname + '/views/simple.pug', "utf8");
             var fn = pug.compile(pugCode);
 
             res.send(fn(data));
