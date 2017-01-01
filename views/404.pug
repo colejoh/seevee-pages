@@ -1,1 +1,70 @@
-h1 404: Site Not Found
+doctype html
+html(lang='en')
+  head
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Pacifico', rel='stylesheet')
+    link(rel='stylesheet', href='css/main.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    title 404 - Seevee Pages
+    style.
+      body {
+      font-family: 'Open Sans', sans-serif;
+      text-align: center;
+      background: #fffdfc;
+      color: #373737;
+      background: -moz-radial-gradient(center, ellipse cover, #fffdfc 0%, #e9e7e6 100%); /* FF3.6-15 */
+      background: -webkit-radial-gradient(center, ellipse cover, #fffdfc 0%,#e9e7e6 100%); /* Chrome10-25,Safari5.1-6 */
+      background: radial-gradient(ellipse at center, #fffdfc 0%,#e9e7e6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffdfc', endColorstr='#e9e7e6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+      }
+      .v-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column;
+      height: 100vh;
+      }
+      .main {
+      font-size: 200px;
+      font-weight: 700;
+      }
+      .sub {
+      font-size: 20px;
+      font-weight: 700;
+      }
+      .logo {
+      margin-bottom: 30px;
+      height: 60px;
+      display: inline-block;
+      }
+      .seevee {
+      font-family: 'Pacifico', sans-serif;
+      color: #4E83E5;
+      font-size: 42px;
+      display: inline;
+      }
+      .super-sub {
+      font-size: 11px;
+      margin-bottom: 7px;
+      }
+      .safety {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      }
+  body
+    .col-md-3
+    .col-md-6.v-center
+      .logo
+        .seevee Seevee
+
+      span.sub The Page You are looking for doesn&apos;t exist
+
+      span.super-sub Click anywhere to go to safety
+      
+      img(src='https://media.giphy.com/media/xTeVhnVVfQGlbwMptS/giphy.gif')
+    .col-md-3
+    a(href='http://pages.seevee.co')
+      .safety
