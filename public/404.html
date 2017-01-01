@@ -3,30 +3,43 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Pacifico" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Pacifico" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css"/>
 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <title>Seevee Pages</title>
+        <title>404 - Seevee Pages</title>
         <style>
             body {
-                font-family: 'Raleway', sans-serif;
+                font-family: 'Open Sans', sans-serif;
                 text-align: center;
                 background: #fffdfc;
                 color: #373737;
-            }
-            .header {
                 background: -moz-radial-gradient(center, ellipse cover, #fffdfc 0%, #e9e7e6 100%); /* FF3.6-15 */
                 background: -webkit-radial-gradient(center, ellipse cover, #fffdfc 0%,#e9e7e6 100%); /* Chrome10-25,Safari5.1-6 */
                 background: radial-gradient(ellipse at center, #fffdfc 0%,#e9e7e6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffdfc', endColorstr='#e9e7e6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-                height: 400px;
+            }
+            .v-center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-flow: column;
+                height: 100vh;
+            }
+            .main {
+                font-size: 200px;
+                font-weight: 700;
+            }
+            .sub {
+                font-size: 20px;
+                font-weight: 700;
             }
             .logo {
                 margin-bottom: 30px;
-                margin-top: 10px
+                height: 60px;
+                display: inline-block;
             }
             .seevee {
                 font-family: 'Pacifico', sans-serif;
@@ -34,37 +47,28 @@
                 font-size: 42px;
                 display: inline;
             }
-            .pages {
-                font-weight: bolder;
-                display: inline;
-                padding-left: 10px;
-                padding-bottom: 10px;
-                font-size: 30px;
+            .super-sub {
+                font-size: 11px;
+                margin-bottom: 7px;
             }
-            h1 {
-                font-weight: 300;
-                margin-top: 130px;
-            }
-            .more-info {
-                padding: 10px;
+            .safety {
+                position: absolute;
+                width: 100%;
+                height: 100vh;
             }
         </style>
     </head>
-    <body class="container-fluid">
-        <div class="row header">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <div class="logo">
-                    <img src="logo.png" width="180px" height="auto"/>
-                </div>
-                <h1>A website tailored to your accomplsihments.</h1>
+    <body>
+        <div class="col-md-3"></div>
+        <div class="col-md-6 v-center">
+            <div class="logo">
+                <div class="seevee">Seevee</div>
             </div>
-            <div class="col-md-2"></div>
+            <span class="sub">The Page You are looking for doesn't exist</span>
+            <span class="super-sub">Click anywhere to go to safety</span>
+            <img src="https://media.giphy.com/media/xTeVhnVVfQGlbwMptS/giphy.gif" />
         </div>
-        <div class="row more-info">
-            <div class="copy">
-                Copyright 2016 Seevee LLC
-            </div>
-        </div>
+        <div class="col-md-3"></div>
+        <a href="http://pages.seevee.co"><div class="safety"></div></a>
     </body>
 </html>
