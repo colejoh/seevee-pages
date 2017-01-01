@@ -2,78 +2,58 @@ doctype html
 html(lang='en')
   head
     meta(charset='utf-8')
-    meta(name='description', content='')
-    meta(name='keywords', content='')
-    meta(name='author', content='')
     title Cole Johnson
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Lato:400,900italic', rel='stylesheet', type='text/css')
     link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css')
+    script(src='https://code.jquery.com/jquery-3.1.1.min.js', integrity='sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=', crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
     style.
       html, body {
       width: 100%;
-      height: 100vh;
       margin: 0;
       color: #FEFEFE;
-      background: #1D7EC6;
+      background: #{settings.color};
       font-family: 'Lato', sans-serif;
+      text-align: center;
+      overflow: hidden;
       }
       a {
       color: inherit;
       }
-      .wassup {
-      text-align: center;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
+      .main-row {
+      height: 50%;
+      }
+      .v-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column;
+      height: 100vh;
       }
       .name {
-      font-size: 60px;
+      font-size: 400%;
       text-transform: uppercase;
       font-weight: 900;
       font-style: italic;
+      text-align: center;
       }
-      .whereami {
-      margin: 20px auto;
-      width: 500px;
-      }
-      .links {
-      margin-top: 20px;
-      }
-      .link {
-      padding-left: 10px;
-      padding-right: 10px;
-      }
-      .projects {
-      position: absolute;
-      top: 0;
-      left: 0;
+      .about {
       width: 100%;
-      min-height: 100vh;
-      background: #1D7EC6;
-      text-align: center;
-      display: none;
       }
-      .project-header {
-      font-size: 50px;
-      text-decoration: underline;
-      font-style: italic;
-      text-transform: uppercase;
-      font-weight: 900;
-      }
-      .close {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 70px;
-      height: 50px;
-      text-align: center;
-      line-height: 50px;
-      }
-      .project {
-      margin-top: 50px;
-      }
-    link(href='https://fonts.googleapis.com/css?family=Lato:400,900italic', rel='stylesheet', type='text/css')
-  body
-    .wassup
-      .name #{firstName} #{lastName}
-      .whereami
-        | Hi, I'm #{firstName}. Right now, I'm a #{workTitle} at #{workOrigin}.
+  body.container-fluid
+    .row.main-row
+      .col-md-3
+      .col-md-6.v-center
+          h1.name #{firstName} #{lastName}
+          .about
+            | Hi, I'm #{firstName}.&nbsp;
+            if settings.showWork
+              span Right now, I'm a #{work.title} at #{work.origin}.&nbsp;
+            if settings.showEd
+              span I'm currently a student at #{ed.origin}.&nbsp;
+            if settings.showProject
+              span I'm working on a project called #{project.title}.&nbsp;
+            if settings.showHonor
+              span I was recently awarded with the #{honor.title} from #{honor.origin}.
+      .col-md-3
