@@ -1,0 +1,111 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title #{user.firstName} #{user.lastName}
+    link(rel='stylesheet', ,='', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Lato:400,900', ,='', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', ,='', type='text/css', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css')
+    script(src='https://code.jquery.com/jquery-3.1.1.min.js', ,='', integrity='sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=', crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    style.
+      body {
+      font-family: 'Lato', sans-serif;
+      }
+      header {
+      width: 100%;
+      min-height: 200px;
+      background: #{user.page.color};
+      text-align: center;
+      }
+      .header-text {
+      padding-top: 50px;
+      }
+      .name {
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 50px;
+      }
+      .links {
+      color: #fff;
+      margin-top: 40px;
+      }
+      .link {
+      display: inline-block;
+      margin: 0px 10px;
+      border-bottom: 1px solid #fff;
+      padding: 5px;
+      color: #fff;
+      margin-bottom: 10px;
+      }
+      .link:hover {
+      background: rgba(255,255,255,.2);
+      cursor: pointer;
+      }
+      .accomplishments {
+      padding: 20px;
+      }
+      .category {
+      margin-bottom: 40px;
+      }
+      .category-label {
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 12px;
+      color: #{user.page.color};
+      margin-bottom: 10px;
+      }
+      .title {
+      font-weight: bold;
+      }
+  body
+    header
+      .header-text
+        h1.name #{user.firstName} #{user.lastName}
+        .links
+          if user.page.showWork && work.length > 0
+            a(href='#work')
+              .link Where I&apos;ve Worked
+          if user.page.showProject && work.length > 0
+            a(href='#projects')
+              .link My Projects
+          if user.page.showEd && work.length > 0
+            a(href='#education')
+              .link My Education
+          if user.page.showHonor && work.length > 0
+            a(href='#honors')
+              .link Honors I&apos;ve Revieved
+    .row.accomplishments
+      .col-md-2
+      .col-md-8
+        if user.page.showWork && work.length > 0
+          #work.row.category
+            .col-md-2.category-label  Work
+            .col-md-10
+              each w in work
+                span.title #{w.title} &nbsp;
+                span.origin at #{w.origin}
+                p.description #{w.description}
+        if user.page.showProject && project.length > 0
+          #projects.row.category
+            .col-md-2.category-label  Projects
+            .col-md-10
+              each p in project
+                span.title #{p.title}
+                p.description #{p.description}
+        if user.page.showEd && ed.length > 0
+          #education.row.category
+            .col-md-2.category-label  Education
+            .col-md-10
+              each e in ed
+                span.title #{e.title},&nbsp;
+                span.origin #{e.origin}
+        if  user.page.showHonor && honor.length > 0
+          #honors.row.category
+            .col-md-2.category-label  Honors
+            .col-md-10
+              each h in honor
+                span.title #{h.title},&nbsp;
+                span.origin Awarded by #{h.origin}
+      .col-md-2
