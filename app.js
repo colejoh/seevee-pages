@@ -23,7 +23,7 @@ app.get('/:pageName', function(req, res) {
                 var data = JSON.parse(body);
                 if(data.status == 404) res.redirect('/404');
                 else {
-                    var pugCode = fs.readFileSync(__dirname + '/views/simple.pug', "utf8");
+                    var pugCode = fs.readFileSync(__dirname + '/views/extended.pug', "utf8");
                     var fn = pug.compile(pugCode);
 
                     res.send(fn(data));

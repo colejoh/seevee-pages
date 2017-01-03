@@ -2,7 +2,7 @@ doctype html
 html(lang='en')
   head
     meta(charset='utf-8')
-    title #{firstName} #{lastName}
+    title #{user.firstName} #{user.lastName}
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
     link(href='https://fonts.googleapis.com/css?family=Lato:400,900italic', rel='stylesheet', type='text/css')
     link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css')
@@ -13,7 +13,7 @@ html(lang='en')
       width: 100%;
       margin: 0;
       color: #FEFEFE;
-      background: #{settings.color};
+      background: #{user.page.color};
       font-family: 'Lato', sans-serif;
       text-align: center;
       overflow: hidden;
@@ -45,15 +45,15 @@ html(lang='en')
     .row.main-row
       .col-md-3
       .col-md-6.v-center
-          h1.name #{firstName} #{lastName}
+          h1.name #{user.firstName} #{user.lastName}
           .about
             | Hi, I'm #{firstName}.&nbsp;
-            if settings.showWork
+            if user.page.showWork && work.length > 0
               span Right now, I'm a #{work.title} at #{work.origin}.&nbsp;
-            if settings.showEd
+            if user.page.showEd && ed.length > 0
               span I'm currently a student at #{ed.origin}.&nbsp;
-            if settings.showProject
+            if user.page.showProject && project.length > 0
               span I'm working on a project called #{project.title}.&nbsp;
-            if settings.showHonor
+            if user.page.showHonor && honor.length > 0
               span I was recently awarded with the #{honor.title} from #{honor.origin}.
       .col-md-3
